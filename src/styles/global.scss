@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --custom-placeholder-animation: placeholder-animation 2s
+            cubic-bezier(0.4, 0, 0.6, 1) infinite alternate-reverse;
+    }
+
+    body {
+        background-color: theme('backgroundColor.slate.900');
+        color: theme('textColor.slate.200');
+        font-family: theme('fontFamily.sans');
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: theme('lineHeight.normal');
+        text-rendering: optimizeLegibility;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        font-size: theme('fontSize.lg');
+    }
+
+    * {
+        min-width: 0;
+        color: inherit;
+        box-sizing: border-box;
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: transparent;
+    }
+
+    button,
+    a,
+    input,
+    textarea,
+    [tabindex],
+    [data-scrollable-wrapper='true'] {
+        &:focus-visible {
+            outline-width: 3px;
+            outline-style: solid;
+            outline-offset: 0px;
+            outline-color: theme('colors.amber.700');
+        }
+
+        &:focus:not(:focus-visible) {
+            outline-color: transparent;
+        }
+
+        // react-focus-lock's focus guards
+        &[data-focus-guard='true'] {
+            outline-color: transparent;
+        }
+
+        &:disabled,
+        [aria-disabled='true'] {
+            cursor: not-allowed;
+        }
+
+        &[type='hidden'] {
+            @apply sr-only;
+        }
+    }
+
+    img,
+    video,
+    canvas {
+        overflow: hidden;
+    }
+
+    input,
+    textarea {
+        background-color: transparent;
+        border-style: none;
+        border-width: 0px;
+        color: inherit;
+        font-size: inherit;
+        padding: 0px;
+        resize: none;
+    }
+
+    img[alt] {
+        text-indent: -9999px;
+        user-select: none;
+    }
+
+    #app-root,
+    #overlay-root {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        contain: strict;
+    }
+
+    #app-root {
+        z-index: 10;
+    }
+
+    #overlay-root {
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+
+    @keyframes placeholder-animation {
+        0% {
+            background-color: theme('colors.slate.400');
+        }
+
+        100% {
+            background-color: theme('colors.slate.800');
+        }
+    }
+}

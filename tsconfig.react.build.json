@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.react.json",
+    "include": [
+        "./src/**/*",
+    ],
+    "compilerOptions": {
+        "allowImportingTsExtensions": true,
+        "skipLibCheck": true,
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "./src/**/*",
+        "node_modules/@types"
+    ],
+    "exclude": [
+        "node_modules/@types/node",
+    ],
+    "compilerOptions": {
+        "types": [
+            "@lesnoypudge/types-global-base",
+            "@lesnoypudge/types-global-web",
+        ],
+        "jsx": "react-jsx",
+        "lib": [
+            "ES2023",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "paths": {
+            // for this demo app only one path is used
+            "@/src/*": [
+                "./src/*"
+            ]
+        },
+    }
+}
