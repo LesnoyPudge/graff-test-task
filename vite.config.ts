@@ -4,6 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { checker } from 'vite-plugin-checker';
 import { babelPluginReactIf } from '@lesnoypudge/react-if';
 import { debarrelPlugin } from './vitePlugins';
+import { PROJECT_NAME } from './src/vars';
 
 
 
@@ -12,7 +13,7 @@ const config: UserConfigFn = ({ mode }) => {
     const isProd = mode === 'production';
 
     return defineConfig({
-        base: isProd ? 'graff-test-task' : '/',
+        base: isProd ? PROJECT_NAME : '/',
         server: {
             port: 3_000,
         },
