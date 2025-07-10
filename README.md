@@ -20,6 +20,6 @@
 
 10. Роутинг с [react‑router‑dom](https://reactrouter.com/).
 
-11. Плагины для [Tailwind CSS](https://tailwindcss.com) (варианты) и для [Vite](https://vitejs.dev/) (debarrel).
+11. Плагины для [Tailwind CSS](https://tailwindcss.com) (варианты) и [Vite](https://vitejs.dev/) (debarrel).
 
 12. Фрактальная структура папок.
