@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Redirecting...</title>
+        <script>
+            const path = location.pathname.replace(/^\/[^\/]+/, '');
+
+            location.replace(
+                '/graff-test-task' + path + location.search + location.hash,
+            );
+        </script>
+    </head>
+    <body>
+        Redirecting...
+    </body>
+</html>
