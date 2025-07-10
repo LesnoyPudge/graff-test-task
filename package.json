@@ -8,7 +8,8 @@
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint .",
-        "preview": "vite preview --host",
+        "preview": "vite preview",
+        "start": "npm run build && npm run preview",
         "type:check": "tsc -p tsconfig.react.build.json"
     },
     "dependencies": {
