@@ -43,7 +43,7 @@ const PlaceholderNode: FC = () => {
     );
 };
 
-export const PostCartPlaceholder: FC = () => {
+export const PostCardPlaceholder: FC = () => {
     return (
         <Iterate count={PLACEHOLDER_COUNT} getKey={(v) => v}>
             {() => <PlaceholderNode/>}

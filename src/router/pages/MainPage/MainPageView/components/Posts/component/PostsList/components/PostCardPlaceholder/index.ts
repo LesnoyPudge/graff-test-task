@@ -1,5 +1,4 @@
 
 
 
-export * from './PostCard';
 export * from './PostCardPlaceholder';

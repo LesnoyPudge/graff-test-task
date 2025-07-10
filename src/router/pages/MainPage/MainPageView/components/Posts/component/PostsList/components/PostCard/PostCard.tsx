@@ -1,7 +1,7 @@
 import { Button, Overlay } from '@/src/components';
 import { Schemas } from '@/src/model/schemas';
 import { Router } from '@/src/router';
-import { Heading } from '@lesnoypudge/utils-react';
+import { Heading, useRefManager } from '@lesnoypudge/utils-react';
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import newWindowIconSrc from '@/src/assets/new-window-icon.svg';
@@ -26,14 +26,15 @@ const styles = createStyles({
     image: 'size-full',
 });
 
-type PostCartProps = {
+type PostCardProps = {
     post: Schemas.Post;
 };
 
-export const PostCart: FC<PostCartProps> = ({
+export const PostCard: FC<PostCardProps> = ({
     post,
 }) => {
     const controls = Overlay.useControls();
+    const linkRef = useRefManager<HTMLAnchorElement >(null);
 
     return (
         <article className={styles.wrapper}>
@@ -67,9 +68,10 @@ export const PostCart: FC<PostCartProps> = ({
                 <Link
                     className={styles.link}
                     to={Router.Pages.Post.getNavigatePath(post.id)}
-                    aria-label='Открыть новую страницу поста'
+                    aria-label='Открыть пост в новой вкладке'
                     target='_blank'
                     rel='noopener noreferrer'
+                    ref={linkRef}
                 >
                     <img
                         className='size-full bg-white'
@@ -77,6 +79,14 @@ export const PostCart: FC<PostCartProps> = ({
                         alt=''
                     />
                 </Link>
+
+                <Overlay.Tooltip
+                    leaderElementRef={linkRef}
+                    preferredAlignment='top'
+                    spacing={20}
+                >
+                    <>Открыть пост в новой вкладке</>
+                </Overlay.Tooltip>
             </div>
         </article>
     );

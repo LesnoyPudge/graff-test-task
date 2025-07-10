@@ -13,11 +13,11 @@ const styles = createStyles({
         w-max
         max-w-[min(300px,100dvw)] 
         rounded-md 
-        bg-slate-500 
+        bg-slate-700 
         px-2.5 
         py-[5px] 
         font-bold 
-        text-slate-300 
+        text-slate-200 
         shadow-md
     `,
 });

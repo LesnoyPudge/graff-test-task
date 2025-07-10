@@ -1,5 +1,5 @@
 import { AppModel } from '@/src/model';
-import { PostCart, PostCartPlaceholder } from './components';
+import { PostCard, PostCardPlaceholder } from './components';
 import { Iterate } from '@lesnoypudge/utils-react';
 import { useAtom } from '@reatom/npm-react';
 import { FC } from 'react';
@@ -19,11 +19,11 @@ export const PostsList: FC = () => {
             aria-label='Список постов'
         >
             <Iterate items={posts} getKey={(v) => v.id}>
-                {(post) => <PostCart post={post}/>}
+                {(post) => <PostCard post={post}/>}
             </Iterate>
 
             <If condition={!isAllPostsFetched}>
-                <PostCartPlaceholder/>
+                <PostCardPlaceholder/>
             </If>
         </PostsListWrapper>
     );
