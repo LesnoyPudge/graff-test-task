@@ -1,8 +1,10 @@
 ## Как запустить:
 
-1. npm i
+```bash
+npm i
 
-2. npm run start
+npm run start
+```
 
 ## Что сделано:
 
@@ -29,7 +31,3 @@
 11. Плагины для [Tailwind CSS](https://tailwindcss.com) (варианты) и [Vite](https://vitejs.dev/) (debarrel).
 
 12. Фрактальная структура папок.
-
-```
-
-```
