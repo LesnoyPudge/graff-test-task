@@ -8,9 +8,11 @@ import { debarrelPlugin } from './vitePlugins';
 
 
 // https://vite.dev/config/
-const config: UserConfigFn = () => {
+const config: UserConfigFn = ({ mode }) => {
+    const isProd = mode === 'production';
+
     return defineConfig({
-        base: '/',
+        base: isProd ? 'graff-test-task' : '/',
         server: {
             port: 3_000,
         },
